@@ -67,7 +67,15 @@ class Simulation:
         If everyone in the population is vaccinated return False
         If there are no more infected people left and everyone is either vaccinated or dead return False
         In all other cases return True'''
-        #TODO: finish this method
+        infected = self.get_infected()
+        
+        if self.total_vaccinated == self.population_size or self.total_dead == self.population_size:
+            return False
+
+        if not infected:
+            return False
+        
+        return True
 
 
     def run(self):
@@ -104,8 +112,7 @@ class Simulation:
         Call the did_survive_infection() method
         if it returns false then the person is no longer alive, does not have an infection and one is added to total dead
         if it returns true then the person no longer has an infection and is vaccinated, one is added to total vaccinated'''
-        #TODO: finish this method
-
+        
 
 
     def time_step(self, infected):
