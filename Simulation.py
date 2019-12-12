@@ -53,6 +53,12 @@ class Simulation:
 
     def get_infected(self):
         '''Gets all the infected people from the population and returns them as a list'''
+
+        infected = []
+
+        for person in self.population:
+            if person.infection is not None:
+                infected.append(person)
         
 
     def simulation_should_continue(self):
