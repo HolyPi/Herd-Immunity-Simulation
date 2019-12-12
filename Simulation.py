@@ -42,14 +42,18 @@ class Simulation:
 
     def print_population(self):
         '''Prints out every person in the population and their current attributes'''
-        for initial_infected in population_size:
-            print()
+        for person in self.population:
+            print(f"Alive: {person.is_alive}")
+            print(f"Vaccinated: {person.is_vaccinated}")
+            if person.infection:
+               print(f"Infection: {person.infected}")
+            else:
+               print("No infection")
         
 
     def get_infected(self):
         '''Gets all the infected people from the population and returns them as a list'''
         
-
 
     def simulation_should_continue(self):
         '''Determines whether the simulation should continue.
